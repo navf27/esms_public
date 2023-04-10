@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use PDO;
-use App\Models\Log;
+use App\Models\Surat;
 
 class ResultController extends Controller
 {
     //index
     public function index(){
-        $mail = Log::all();
-        return view('halaman2', compact('mail'));
+        // $mail = Surat::all();
+        // return view('halaman2', compact('mail'));
+        return $log;
     }
 }

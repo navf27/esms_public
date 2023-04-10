@@ -32,7 +32,7 @@ class LogController extends Controller
         // return redirect('/result', compact('log'));
         // return view('halaman2', compact('log'));
         // return $log->nama;
-        return redirect()->route('halaman2.index')->with(['nama' => $log->nama, 'alamat' => $log->alamat, 'hp' => $log->hp, 'jenis_kelamin' => $log->jenis_kelamin]);
+        return redirect()->route('halaman2.index')->with(['nama' => $log->nama, 'alamat' => $log->alamat, 'hp' => $log->hp, 'jenis_kelamin' => $log->jenis_kelamin, 'kata_kunci' => $log->kata_kunci]);
     }
 }
 

@@ -32,7 +32,7 @@
       </div>
     </div>
 
-    <form class="row" action="">
+    <form class="row" action="{{ route("halaman2.search")}}">
       <div class="col-4">
         <p class="fw-bolder">No.HP : {{ session()->get('hp') }}</p>
       </div>
@@ -47,47 +47,7 @@
       </div>
     </form>
   </section>
-  <!-- <div class="card table-responsive" style="border-radius: 10px;">
-        <table class="table">
-          <tbody>
-            <tr>
-              <th scope="col">Nama :</th>
-            </tr>
-
-            <tr>
-              <th scope="row">No HP :</th>
-            </tr>
-
-            <tr>
-              <th scope="row">Jenis Kelamin :</th>
-            </tr>
-
-            <tr>
-              <th scope="row">ALamat :</th>
-            </tr>
-          </tbody>
-        </table>
-      </div> -->
-
-  <!-- <div class="justify-content-center mt-4">
-        <div class="row">
-          <div class="col-md-6 mb-4">
-            <div class="form-outline">
-              <input type="text" id="Search" class="form-control form-control-lg" placeholder="Cari Disini" />
-            </div>
-          </div>
-
-          <div class="col-md-6 mb-4">
-            <div class="form-outline">
-              <button type="button" class="btn btn-primary btn-lg" style="border-radius: 10px;">Search</button>
-            </div>
-          </div>
-        </div>
-      </div> -->
-
-  <!-- </div> -->
-
-
+  
   <section>
     <div class="container-fluid">
 
@@ -106,24 +66,12 @@
               <tbody>
                 @foreach ($mail as $item)
                 <tr>
-                  <td>{{ $item->id }}</td>
-                  <td>{{ $item->nama }}</td>
-                  <td>{{ $item->hp }}</td>
-                  <td>{{ $item->alamat }}</td>
+                  <td>{{ $item->entrysurat_id }}</td>
+                  <td>{{ $item->noagenda }}</td>
+                  <td>{{ $item->dari }}</td>
+                  <td>{{ $item->hal }}</td>
                 </tr>
                 @endforeach
-                {{-- <tr>
-                  <td>1,001</td>
-                  <td>random</td>
-                  <td>data</td>
-                  <td>placeholder</td>
-                </tr>
-                <tr>
-                  <td>1,002</td>
-                  <td>placeholder</td>
-                  <td>irrelevant</td>
-                  <td>visual</td>
-                </tr> --}}
               </tbody>
             </table>
           </div>
