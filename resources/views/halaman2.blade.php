@@ -17,7 +17,7 @@
   <section>
     <div class="row justify-content-center">
       <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
-        <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Result</p>
+        <p class="text-center h1 fw-bold mb-5 mx-1 mx-4 mt-4">Result</p>
       </div>
     </div>
   </section>
@@ -32,7 +32,7 @@
       </div>
     </div>
 
-    <form class="row" action="{{ route("halaman2.search")}}">
+    <form class="row" action="{{route('halaman2.search')}}" method="POST"> @csrf
       <div class="col-4">
         <p class="fw-bolder">No.HP : {{ session()->get('hp') }}</p>
       </div>
@@ -40,7 +40,7 @@
         <p class="fw-bolder">Jenis Kelamin : {{ session()->get('jenis_kelamin') }}</p>
       </div>
       <div class="col-2">
-        <input type="text" class="form-control" placeholder="">
+        <input type="text" class="form-control" placeholder="" name="search">
       </div>
       <div class="col-1">
         <button type="submit" class="btn btn-primary">Search</button>
@@ -51,14 +51,13 @@
   <section>
     <div class="container-fluid">
 
-      <div class="card mx-md-4 mt-4" style="border-radius: 30px;">
-        <div class="card-body">
+      <div class="card mx-4 mt-4">
           <div class="table-responsive">
-            <table class="table table-striped table-md">
+            <table class="table table-bordered">
               <thead>
-                <tr>
+                <tr class="text-center">
                   <th scope="col">No</th>
-                  <th scope="col">No Agenda</th>
+                  <th scope="col" width ="150px">No Agenda</th>
                   <th scope="col">Dari</th>
                   <th scope="col">Perihal</th>
                 </tr>
@@ -66,15 +65,14 @@
               <tbody>
                 @foreach ($mail as $item)
                 <tr>
-                  <td>{{ $item->entrysurat_id }}</td>
-                  <td>{{ $item->noagenda }}</td>
-                  <td>{{ $item->dari }}</td>
-                  <td>{{ $item->hal }}</td>
+                  <td scope="row">{{ $item->entrysurat_id }}</td>
+                  <td scope="row">{{ $item->noagenda }}</td>
+                  <td scope="row">{{ $item->dari }}</td>
+                  <td scope="row">{{ $item->hal }}</td>
                 </tr>
                 @endforeach
               </tbody>
             </table>
-          </div>
         </div>
       </div>
   </section>
