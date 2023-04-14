@@ -7,9 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    {{ $log->nama }}
-    {{-- @@foreach ($log as $item)
-        {{ $item }}
-    @endforeach --}}
+    {{ $nama }}
 </body>
 </html>

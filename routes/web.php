@@ -26,7 +26,7 @@ Route::controller(LogController::class)->group(function () {
 
 Route::controller(ResultController::class)->group(function (){
     Route::get('/result', 'index')->name('halaman2.index');
-    Route::post('/result/sc', 'search')->name('halaman2.search');
+    Route::post('/result/search', 'search')->name('halaman2.search');
     // Route::get('/result');
     // Route::get('/result', function(){
     //     return view('test');

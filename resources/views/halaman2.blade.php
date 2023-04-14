@@ -23,35 +23,36 @@
   </section>
 
   <section class="container">
-    <div class="row">
-      <div class="col-4">
-        <p class="fw-bolder">Nama : {{ session()->get('nama') }}</p>
+    <form action="{{route('halaman2.search')}}" method="POST"> @csrf
+      <div class="row">
+        <div class="col-4">
+          <p class="fw-bolder">Nama : <input type="text" name="nama" value="{{ session()->get('nama') }}" size="25" readonly></p>
+        </div>
+        <div class="col-3">
+          <p class="fw-bolder">Alamat : <input type="text" name="alamat" value="{{ session()->get('alamat') }}" readonly></p>
+        </div>
       </div>
-      <div class="col-3">
-        <p class="fw-bolder">Alamat : {{ session()->get('alamat') }}</p>
-      </div>
-    </div>
 
-    <form class="row" action="{{route('halaman2.search')}}" method="POST"> @csrf
-      <div class="col-4">
-        <p class="fw-bolder">No.HP : {{ session()->get('hp') }}</p>
-      </div>
-      <div class="col-5">
-        <p class="fw-bolder">Jenis Kelamin : {{ session()->get('jenis_kelamin') }}</p>
-      </div>
-      <div class="col-2">
-        <input type="text" class="form-control" placeholder="" name="search">
-      </div>
-      <div class="col-1">
-        <button type="submit" class="btn btn-primary">Search</button>
+      <div class="row">
+        <div class="col-4">
+          <p class="fw-bolder">No.HP : <input type="text" name="hp" value="{{ session()->get('hp') }}" readonly></p>
+        </div>
+        <div class="col-5  fw-bolder">
+          <p>Jenis Kelamin : <input type="text" name="jenis" value="{{ session()->get('jenis_kelamin') }}" readonly></p>
+        </div>
+        <div class="col-2">
+          <input type="text" class="form-control" placeholder="" name="search" value="{{ old('search') }}">
+        </div>
+        <div class="col-1">
+          <input type="submit" class="btn btn-primary" value="Search">
+        </div>
       </div>
     </form>
   </section>
   
   <section>
-    <div class="container-fluid">
-
-      <div class="card mx-4 mt-4">
+      <div class="container-fluid">
+        <div class="card mx-4 mt-4">
           <div class="table-responsive">
             <table class="table table-bordered">
               <thead>
@@ -73,6 +74,8 @@
                 @endforeach
               </tbody>
             </table>
+          </div>
+          {{ $mail->links() }}
         </div>
       </div>
   </section>
@@ -82,7 +85,13 @@
   <!-- Option 1: Bootstrap Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"></script>
+    crossorigin="anonymous">
+  
+    
+  
+  
+  
+  </script>
 
   <!-- Option 2: Separate Popper and Bootstrap JS -->
   <!--

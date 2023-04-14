@@ -16,7 +16,7 @@
 
     <title>halaman 1</title>
   </head>
-  <body>
+  <body id="myDIV">
   <section class="vh-100" style="background-color: white;">
   <div class="container h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
@@ -60,7 +60,7 @@
                     </div>
                   </div>
                   <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                    <button type="submit" class="btn btn-primary btn-lg" style="border-radius: 10px;">Submit</button>
+                    <input type="submit" class="btn btn-primary btn-lg" style="border-radius: 10px;" value="Submit">
                   </div>
                 </form>
               </div>
@@ -79,11 +79,41 @@
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script
+    <script type="text/javascript">
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
-    ></script>
+      
+      // const cursor = document.querySelector(".cursor");
+      // var timeout;
+
+      // // document.addEventListener("mousemove", (e)=>{
+      // //   function myURL() {
+      // //     document.location.href = 'https://youtube.com';
+      // //   }
+
+      // //   timeout = setTimeout(myURL, 3000);
+      // // });
+      // document.getElementById("myDIV").onmousemove = function(event) {myFunction(event)};
+
+      // function myFunction(e){
+      //   // let move = true;
+
+      //   // function redirect () {
+      //   //   setTimeout(myURL, 3000);
+      //   //   //  var result = document.getElementById("result");
+      //   //   //  result.innerHTML = "<b> The page will redirect after delay of 5 seconds";
+      //   // }
+
+      //   function myURL() {
+      //     document.location.href = 'https://youtube.com';
+      //   }
+      //   timeout = setTimeout(myURL, 3000);
+        
+
+      // }
+
+    </script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
