@@ -88,11 +88,12 @@
 
     document.addEventListener("mousemove", (e) => {
       function mouseStop(){
-        document.location.href = 'https://youtube.com';
+        document.location.href = '/';
+        // window.history.back();
       }
 
       clearTimeout(timeout);
-      timeout = setTimeout(mouseStop, 60000);
+      timeout = setTimeout(mouseStop, 5000);
     });
   </script>
 
