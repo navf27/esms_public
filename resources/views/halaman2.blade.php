@@ -41,7 +41,7 @@
           <p>Jenis Kelamin : <input type="text" name="jenis" value="{{ session()->get('jenis_kelamin') }}" readonly></p>
         </div>
         <div class="col-2">
-          <input type="text" class="form-control" placeholder="" name="search" value="{{ old('search') }}">
+          <input type="text" class="form-control" placeholder="" name="search" value="{{ session()->get('kata_kunci') }}">
         </div>
         <div class="col-1">
           <input type="submit" class="btn btn-primary" value="Search">
@@ -83,14 +83,17 @@
   <!-- Optional JavaScript; choose one of the two! -->
 
   <!-- Option 1: Bootstrap Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous">
-  
-    
-  
-  
-  
+  <script>
+    var timeout;
+
+    document.addEventListener("mousemove", (e) => {
+      function mouseStop(){
+        document.location.href = 'https://youtube.com';
+      }
+
+      clearTimeout(timeout);
+      timeout = setTimeout(mouseStop, 60000);
+    });
   </script>
 
   <!-- Option 2: Separate Popper and Bootstrap JS -->
